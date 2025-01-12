@@ -1,7 +1,7 @@
 {
-  "name": "purplerouter",
+  "name": "Playwright",
   "version": "1.0.0",
-  "description": "devPortalAutomation",
+  "description": "PlaywrightDemo",
   "main": "index.js",
   "scripts": {
     "pretest": "rm -rf reports && rm -rf rm -rf allure* && rm -rf output",
