@@ -5,12 +5,11 @@
   "main": "index.js",
   "scripts": {
     "pretest": "rm -rf reports && rm -rf allure-results && rm -rf output",
-    "test": "ipAddress=192.168.19.1 routerType=Purple routerSerialNumber=ABP23533166 npx cucumber-js test --tags '@api' || true",
+    "test": "npx cucumber-js test --tags '@api' || true",
     "cucumberReport": "npx ts-node src/helper/report/cucumberReport.ts",
     "allureReport": "npx allure generate reports/allure-results --clean -o reports/allure-report && npx allure open reports/allure-report",
     "posttest": "npx allure generate reports/allure-results --clean -o reports/allure-report && npx allure open reports/allure-report && python3 -m http.server",
     "lint": "node_modules/.bin/eslint . --ext .ts",
-    "clicommand": "ipAddress=192.168.100.1 routerType=Purple routerSerialNumber=ABV32012815 npm run test"
   },
   "author": "",
   "license": "ISC",
