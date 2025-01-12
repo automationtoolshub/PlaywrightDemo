@@ -1,0 +1,15 @@
+node_modules/*
+/test-results/
+/playwright-report/
+/playwright/.cache/
+reports
+allure-report
+allure-results
+dummy*
+.vscode
+output.txt
+package-lock.json
+output
+/output*
+.DS_Store
+logs
