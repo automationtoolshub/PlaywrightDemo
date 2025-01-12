@@ -6,10 +6,10 @@
     "publishQuiet": true,
     "format": [
       "progress-bar",
-      "./src/helper/report/allureReport.ts:./output.txt",
+      "allure-cucumberjs/reporter",
       "html:reports/cucumberReport/cucumber-report.html",
       "json:reports/cucumberReport/cucumber-report.json"
-    ],
+    ],  
     "parallel": 1,
     "timeout": 60000,
     "retry":0

@@ -3,13 +3,10 @@ import { LoginPage } from '../pages/LoginPage'
 import {
   Given,
   setDefaultTimeout,
-  setWorldConstructor,
   Then,
   When,
 } from '@cucumber/cucumber'
-import { CucumberAllureWorld } from 'allure-cucumberjs'
 
-setWorldConstructor(CucumberAllureWorld)
 setDefaultTimeout(120 * 60 * 1000)
 const loginPage = new LoginPage()
 

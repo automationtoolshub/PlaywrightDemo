@@ -7,7 +7,7 @@ Feature: Bank of America Home page
         Then Click Login Button
         Then Verify the error message is displayed
 
-    @api
+    @smoke @api
     Scenario: Verify Fake API Resposne
         Given Hit GetProdcut Api Api endpoint
         Then Retrieve prodcut ids from resposne

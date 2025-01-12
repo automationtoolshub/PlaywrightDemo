@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+ 
 //import { chromium, expect } from '@playwright/test'
 import { expect } from '@playwright/test'
 import { commonPage } from '../../hooks/commonPage'
@@ -50,47 +51,6 @@ export class LoginPage {
       .textContent()
     expect(errorMessage).toContain('Having problems logging')
     console.log(errorMessage)
-  }
-
-  public async clickUserIcon() {
-    await commonPage.page.locator(PageObjectRouterLoginPage.USER_ICON).click()
-  }
-  public async clickSignOut() {
-    await commonPage.page
-      .locator(PageObjectRouterLoginPage.SIGN_OUT_LINK)
-      .click()
-  }
-
-  public async clickShowPasswordIcon() {
-    const element = await commonPage.page
-      .locator(PageObjectRouterLoginPage.SHOW_PASSWORD_ICON)
-    await element.isVisible()
-    await element.click()
-  }
-
-  public async verifyPasswordIsNotMasked(context: any) {
-    const element = await commonPage.page
-      .locator(PageObjectRouterLoginPage.PASSWORD)
-    let elementText = await element.getAttribute('type')
-    if (elementText.toUpperCase().includes('PASSWORD')) {
-      await this.clickShowPasswordIcon()
-      elementText = await element.getAttribute('type')
-      console.log("await element.getAttribute('type')", elementText)
-    }
-    await Utility.attachMessageToReport('Password is Visible', context)
-    expect(elementText.toUpperCase().includes('TEXT')).toEqual(true)
-  }
-
-  public async verifyPasswordIsMasked(context: any) {
-    const element = await commonPage.page
-      .locator(PageObjectRouterLoginPage.PASSWORD)
-    let elementText = await element.getAttribute('type')
-    if (elementText.toUpperCase().includes('TEXT')) {
-      await this.clickShowPasswordIcon()
-      elementText = await element.getAttribute('type')
-    }
-    await Utility.attachMessageToReport('Password is Masked', context)
-    expect(elementText.toUpperCase().includes('PASSWORD')).toEqual(true)
   }
 
 }

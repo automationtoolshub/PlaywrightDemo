@@ -2,13 +2,11 @@
 import {
   Given,
   setDefaultTimeout,
-  setWorldConstructor,
   Then,
 } from '@cucumber/cucumber'
-import { CucumberAllureWorld } from 'allure-cucumberjs'
+
 import { GetProductApi, getProductResponse } from '../api/GetProductApi'
 import { Utility } from '../utility/Utility'
-setWorldConstructor(CucumberAllureWorld)
 setDefaultTimeout(120 * 60 * 1000)
 const getProdcutApi = new GetProductApi()
 

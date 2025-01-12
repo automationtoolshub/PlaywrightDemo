@@ -13,3 +13,5 @@ output
 /output*
 .DS_Store
 logs
+allure-results
+allure-reports

@@ -203,12 +203,12 @@ def getEmailSubject(firmwareVersion, buildResult) {
 
 // Generate and publish reports (Allure)
 def generateAndPublishReports() {
-    sh './node_modules/.bin/allure generate reports/allure-results --clean -o reports/allure-report'
+    sh './node_modules/.bin/allure generate allure-results --clean -o allure-report'
     allure([
         includeProperties: false,
         jdk: '',
         reportBuildPolicy: 'ALWAYS',
-        results: [[path: 'reports/allure-results']]
+        results: [[path: 'allure-results']]
     ])
     sh 'npx ts-node src/helper/report/cucumberReport.ts'
     publishHTML([
